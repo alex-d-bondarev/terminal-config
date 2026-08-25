@@ -1,5 +1,5 @@
 # Installed:
-# brew install bat fd fzf zoxide zsh-autosuggestions zsh-syntax-highlighting
+# brew install bat fd fzf starship zoxide zsh-autosuggestions zsh-syntax-highlighting
 
 
 ## Customisation
