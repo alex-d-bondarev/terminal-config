@@ -30,8 +30,6 @@ setopt INC_APPEND_HISTORY
 
 
 ## Aliases & functions
-# First git clone https://github.com/zsh-users/zsh-syntax-highlighting.git, next source this:
-source "$HOME/Documents/projects/github/zsh-syntax-highlighting//zsh-syntax-highlighting.zsh"
 source "$HOME/.config/aliases/git_lib.zsh"
 source "$HOME/.config/aliases/git.zsh"
 source "$HOME/.config/aliases/mix.zsh"
@@ -49,6 +47,7 @@ export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(zoxide init zsh)"
 
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
