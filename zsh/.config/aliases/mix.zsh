@@ -23,4 +23,10 @@ alias git_add_ssh="ssh-add --apple-use-keychain ~/.ssh/id_ssh_github_2"
 alias git_my_refs="git for-each-ref --format=' %(authorname) %09 %(refname)' --sort=authorname | grep Bondarev"
 
 # Other
-alias gpg_restart="echo \"test\" | gpg --clearsign"
+gpg_restart(){
+	echo "Restarting gpg..."
+	gpg --clearsign
+	gpgconf --kill gpg-agent
+	gpgconf --launch gpg-agent
+	echo "gpg restarted"
+}
