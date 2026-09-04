@@ -25,7 +25,6 @@ alias git_my_refs="git for-each-ref --format=' %(authorname) %09 %(refname)' --s
 # Other
 gpg_restart(){
 	echo "Restarting gpg..."
-	gpg --clearsign
 	gpgconf --kill gpg-agent
 	gpgconf --launch gpg-agent
 	echo "gpg restarted"
