@@ -1,0 +1,13 @@
+{
+  "schema_version": "authorship/3.0.0",
+  "prompts": {
+    "kiro-cli": {
+      "session_id": "86f46571-aad4-4537-ad94-7fc0f92f8355",
+      "workspace_folder": "/Users/SBondarev",
+      "tool": "kiro-cli",
+      "commit": "75f94d471184ea7c395ed03376fdcbd1768c2760",
+      "timestamp": "2026-09-06T12:09:48Z",
+      "modified_files": []
+    }
+  }
+}
