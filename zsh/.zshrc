@@ -42,7 +42,7 @@ source <(fzf --zsh)
 
 # Requires any https://www.nerdfonts.com/font-downloads
 eval "$(starship init zsh)"
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
+export STARSHIP_CONFIG=~/.config/starship.toml
 
 eval "$(zoxide init zsh)"
 

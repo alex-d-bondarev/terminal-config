@@ -4,6 +4,7 @@ add_newline = false
 format = """$time$directory$character"""
 right_format = """$git_branch$git_state$git_status$docker_context$kubernetes"""
 palette = 'catppuccin_latte'
+command_timeout = 1000
 
 [time]
 disabled = false
