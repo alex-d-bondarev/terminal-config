@@ -6,6 +6,7 @@ alias zz="vs_open ~/.zshrc"
 # apps
 alias ii_open="open -a \"Intellij Idea\""
 alias py_open="open -a \"PyCharm\""
+alias rub_open="open -a \"RubyMine\""
 alias vs_open="open -a \"Visual Studio Code\""
 alias ws_open="open -a \"WebStorm\""
 
