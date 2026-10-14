@@ -1,0 +1,14 @@
+zsh/.config/starship.toml
+  h_8a10cdf5bb5319 44
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e6caef5c30fcdf3c2d638c1bfb8575b7d0779857",
+  "prompts": {},
+  "humans": {
+    "h_8a10cdf5bb5319": {
+      "author": "Sasha Bondarev <5994478+alex-d-bondarev@users.noreply.github.com>"
+    }
+  }
+}
