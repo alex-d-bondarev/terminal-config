@@ -1,0 +1,19 @@
+zsh/.config/lib/git_custom.zsh
+  s_bbaecce0091f3e::t_ce412be66ca44d 1-11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b7829c8b71595aad75ee0669692a612634c17eef",
+  "prompts": {},
+  "sessions": {
+    "s_bbaecce0091f3e": {
+      "agent_id": {
+        "tool": "mock_ai",
+        "id": "ai-thread-1790245739214824000",
+        "model": "unknown"
+      },
+      "human_author": null
+    }
+  }
+}
