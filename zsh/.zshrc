@@ -38,6 +38,13 @@ export GPG_TTY=$(tty)
 
 source <(fzf --zsh)
 
+# ###########
+# Styling
+# ###########
+
+# First git clone https://github.com/zsh-users/zsh-syntax-highlighting.git, next source this:
+source "$HOME/Documents/projects/github/zsh-syntax-highlighting//zsh-syntax-highlighting.zsh"
+
 # Requires any https://www.nerdfonts.com/font-downloads
 cached_eval starship starship init zsh
 export STARSHIP_CONFIG=~/.config/starship.toml
