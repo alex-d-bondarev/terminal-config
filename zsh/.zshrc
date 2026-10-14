@@ -46,7 +46,6 @@ cached_eval zoxide zoxide init zsh
 
 BREW_PREFIX="$(brew --prefix)"
 source "$BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-source "$BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # ###########
 # Export variables from .env
