@@ -34,6 +34,7 @@ source "$HOME/.config/lib/git_custom.zsh"
 source "$HOME/.config/lib/mix.zsh"
 source "$HOME/.config/lib/cached_init.zsh"
 
+export GPG_TTY=$(tty)
 
 source <(fzf --zsh)
 
