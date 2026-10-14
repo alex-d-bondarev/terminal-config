@@ -1,24 +1,23 @@
 # Installed:
 # brew install bat fd fzf starship zoxide zsh-autosuggestions zsh-syntax-highlighting
 
+# Uncomment to profile zsh performance
+# Don't forget to do the same with zprof command at the bottom!
+# zmodload zsh/zprof
 
 ## Customisation
 autoload -U colors && colors
 
-# Basic auto/tab complete:
+# Basic auto/tab complete setup
 # Credit: https://gist.github.com/LukeSmithxyz/e62f26e55ea8b0ed41a65912fbebbe52
 autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
-compinit
+# -C skips the ~400ms compaudit security scan when .zcompdump is <24h old.
+zcompdump="${ZDOTDIR:-$HOME}/.zcompdump"
+[[ -n "${zcompdump}"(#qNmh-24) ]] && compinit -C -d "$zcompdump" || compinit -d "$zcompdump"
+unset zcompdump
 _comp_options+=(globdots)		# Include hidden files.
-
-# bat
-export BAT_THEME="GitHub"
-alias bathelp='bat --plain --language=help'
-help() {
-    "$@" --help 2>&1 | bathelp
-}
 
 # History
 HISTFILE=~/.config/zsh/.zsh_history
@@ -28,31 +27,41 @@ SAVEHIST=100000
 setopt HIST_SAVE_NO_DUPS
 setopt INC_APPEND_HISTORY
 
-
 ## Aliases & functions
-source "$HOME/.config/aliases/git_lib.zsh"
-source "$HOME/.config/aliases/git.zsh"
-source "$HOME/.config/aliases/mix.zsh"
+source "$HOME/.config/lib/git_lib.zsh"
+source "$HOME/.config/lib/git.zsh"
+source "$HOME/.config/lib/git_custom.zsh"
+source "$HOME/.config/lib/mix.zsh"
+source "$HOME/.config/lib/cached_init.zsh"
 
-
-## Loads
-export GPG_TTY=$(tty)
 
 source <(fzf --zsh)
 
 # Requires any https://www.nerdfonts.com/font-downloads
-eval "$(starship init zsh)"
+cached_eval starship starship init zsh
 export STARSHIP_CONFIG=~/.config/starship.toml
 
-eval "$(zoxide init zsh)"
+cached_eval zoxide zoxide init zsh
 
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+BREW_PREFIX="$(brew --prefix)"
+source "$BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+# ###########
+# Export variables from .env
+# ###########
+set -o allexport; source ~/.env; set +o allexport
 
 export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+cached_eval pyenv pyenv init --no-rehash -
+
+# The bat app
+export BAT_THEME="GitHub"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Uncomment to profile zsh performance
+# zprof

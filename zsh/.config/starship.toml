@@ -1,10 +1,12 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
+format = """$time$directory$git_branch$git_state$git_status$kubernetes\n$character"""
+
 add_newline = false
-format = """$time$directory$character"""
-right_format = """$git_branch$git_state$git_status$docker_context$kubernetes"""
 palette = 'catppuccin_latte'
+
 command_timeout = 1000
+scan_timeout = 1000
 
 [time]
 disabled = false

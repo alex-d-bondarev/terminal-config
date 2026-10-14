@@ -1,4 +1,4 @@
-# navigate
+# shell
 alias l='ls -lah'
 alias zsh_restart="exec zsh"
 alias zz="vs_open ~/.zshrc"
